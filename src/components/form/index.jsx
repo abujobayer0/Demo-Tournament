@@ -1,6 +1,33 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Form = () => {
+  const [formData, setFormData] = useState({
+    firstName: "",
+    squadName: "",
+    firstPlayerName: "",
+    secondPlayerName: "",
+    thirdPlayerName: "",
+    fourPlayerName: "",
+    fivePlayerName: "",
+    sixPlayerName: "",
+    firstPlayerUid: "",
+    secondPlayerUid: "",
+    thirdPlayerUid: "",
+    fourPlayerUid: "",
+    fivePlayerUid: "",
+    sixPlayerUid: "",
+    gmail: "",
+    contactNumber: "",
+  });
+
+  console.log(formData);
+
+  const handleInput = (e) => {
+    const name = e.target.name;
+    const value = e.target.value;
+    setFormData({ ...formData, [name]: value });
+  };
+
   return (
     <form
       action="#"
@@ -13,7 +40,9 @@ const Form = () => {
         <label htmlFor="fname">আপনার নাম?</label>
         <br />
         <input
-          name="MyName"
+          onChange={handleInput}
+          name="firstName"
+          value={formData.firstName}
           className="form-control"
           type="text"
           id="fname"
@@ -24,7 +53,9 @@ const Form = () => {
         <label htmlFor="sname">আপনার স্কোয়াড এর নাম?</label>
         <br />
         <input
-          name="SquadName"
+          onChange={handleInput}
+          value={formData.squadName}
+          name="squadName"
           className="form-control"
           type="text"
           id="sname"
@@ -35,6 +66,8 @@ const Form = () => {
         <label htmlFor="FristPlayer">প্রথম প্লেয়ার এর নাম?</label>
         <br />
         <input
+          onChange={handleInput}
+          value={formData.firstPlayerName}
           name="firstPlayerName"
           className="form-control"
           type="text"
@@ -46,6 +79,8 @@ const Form = () => {
         <label htmlFor="SecondPlayer">দ্বিতীয় প্লেয়ার এর নাম?</label>
         <br />
         <input
+          onChange={handleInput}
+          value={formData.secondPlayerName}
           name="secondPlayerName"
           className="form-control"
           type="text"
@@ -57,6 +92,8 @@ const Form = () => {
         <label htmlFor="ThirdPlayer">তৃতীয় প্লেয়ার এর নাম?</label>
         <br />
         <input
+          onChange={handleInput}
+          value={formData.thirdPlayerName}
           name="thirdPlayerName"
           className="form-control"
           type="text"
@@ -68,6 +105,8 @@ const Form = () => {
         <label htmlFor="FourthPlayer">চতুর্থ প্লেয়ার এর নাম?</label>
         <br />
         <input
+          onChange={handleInput}
+          value={formData.fourPlayerName}
           name="fourPlayerName"
           className="form-control"
           type="text"
@@ -79,6 +118,8 @@ const Form = () => {
         <label htmlFor="five-player">পঞ্চম প্লেয়ার এর নাম?</label>
         <br />
         <input
+          onChange={handleInput}
+          value={formData.fivePlayerName}
           name="fivePlayerName"
           className="form-control"
           type="text"
@@ -90,6 +131,8 @@ const Form = () => {
         <label htmlFor="six-player">ষষ্ঠ প্লেয়ার এর নাম?</label>
         <br />
         <input
+          onChange={handleInput}
+          value={formData.sixPlayerName}
           name="sixPlayerName"
           className="form-control"
           type="text"
@@ -102,6 +145,8 @@ const Form = () => {
         <label htmlFor="FristUID">প্রথম প্লেয়ার এর UID?</label>
         <br />
         <input
+          onChange={handleInput}
+          value={formData.firstPlayerUid}
           name="firstPlayerUid"
           className="form-control"
           type="number"
@@ -113,6 +158,8 @@ const Form = () => {
         <label htmlFor="SecondUID">দ্বিতীয় প্লেয়ার এর UID?</label>
         <br />
         <input
+          onChange={handleInput}
+          value={formData.secondPlayerUid}
           name="secondPlayerUid"
           className="form-control"
           type="number"
@@ -124,6 +171,8 @@ const Form = () => {
         <label htmlFor="ThirdUID">তৃতীয় প্লেয়ার এর UID?</label>
         <br />
         <input
+          onChange={handleInput}
+          value={formData.thirdPlayerUid}
           name="thirdPlayerUid"
           className="form-control"
           type="number"
@@ -135,6 +184,8 @@ const Form = () => {
         <label htmlFor="FourthUID">চতুর্থ প্লেয়ার এর UID?</label>
         <br />
         <input
+          onChange={handleInput}
+          value={formData.fourPlayerUid}
           name="fourPlayerUid"
           className="form-control"
           type="number"
@@ -146,6 +197,8 @@ const Form = () => {
         <label htmlFor="five-uid">পঞ্চম প্লেয়ার এর UID?</label>
         <br />
         <input
+          onChange={handleInput}
+          value={formData.fivePlayerUid}
           name="fivePlayerUid"
           className="form-control"
           type="number"
@@ -157,6 +210,8 @@ const Form = () => {
         <label htmlFor="six-uid"> ষষ্ঠ প্লেয়ার এর UID?</label>
         <br />
         <input
+          onChange={handleInput}
+          value={formData.sixPlayerUid}
           name="sixPlayerUid"
           className="form-control"
           type="number"
@@ -169,6 +224,8 @@ const Form = () => {
         <label htmlFor="gmail">আপনার Gmail?</label>
         <br />
         <input
+          onChange={handleInput}
+          value={formData.gmail}
           name="gmail"
           className="form-control"
           type="email"
@@ -181,7 +238,9 @@ const Form = () => {
         <label htmlFor="contactNumber">আপনার যোগাযোগ নম্বর?</label>
         <br />
         <input
-          name="ContactNumber"
+          onChange={handleInput}
+          value={formData.contactNumber}
+          name="contactNumber"
           className="form-control"
           type="number"
           id="contactNumber"
