@@ -17,7 +17,7 @@ const NotFound = () => {
           height: "auto",
         }}
         src="static/glitch-error-404.jpeg"
-        alt=""
+        alt="not found"
       />
     </div>
   );
