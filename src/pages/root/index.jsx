@@ -1,4 +1,3 @@
-import "./App.css";
 import React from "react";
 import {
   About,
@@ -8,9 +7,9 @@ import {
   Prize,
   Rules,
   Thanks,
-} from "./components";
+} from "../../components";
 
-function App() {
+const Root = () => {
   return (
     <React.Fragment>
       <Navbar />
@@ -22,6 +21,6 @@ function App() {
       <Footer />
     </React.Fragment>
   );
-}
+};
 
-export default App;
+export default Root;
