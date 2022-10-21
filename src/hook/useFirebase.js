@@ -7,7 +7,7 @@ initializationFirebase();
 
 const useFirebase = () => {
   function writeUserData(name, email) {
-    set(ref(database, "users/" + uid), {
+    set(ref(database, "users/" + uid()), {
       username: name,
       email: email,
     });
