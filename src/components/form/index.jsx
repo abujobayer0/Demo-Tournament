@@ -1,6 +1,10 @@
 import React, { useState } from "react";
+import useAuth from "../../hook/useAuth";
 
 const Form = () => {
+  const { writeUserData } = useAuth();
+  console.log(writeUserData);
+
   const [formData, setFormData] = useState({
     firstName: "",
     squadName: "",
@@ -276,7 +280,13 @@ const Form = () => {
         <br />
         <input className="form-control" id="imageFour" type="file" />
       </div>
-      <button type="submit" id="formBtn">
+      <button
+        type="submit"
+        id="formBtn"
+        onClick={() => {
+          writeUserData("Sohel Rana", "sohel.rana.coder@gmail.com");
+        }}
+      >
         জমা দিন
         <i
           style={{

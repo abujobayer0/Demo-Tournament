@@ -1,22 +1,20 @@
-import {
-  createUserWithEmailAndPassword,
-  getAuth,
-  getIdToken,
-  GoogleAuthProvider,
-  onAuthStateChanged,
-  signInWithEmailAndPassword,
-  signInWithPopup,
-  signOut,
-  updateProfile,
-} from "firebase/auth";
-import { useEffect, useState } from "react";
 import { toast } from "react-hot-toast";
-import initializationFirebase from "../firebase/firebase.init";
+import { initializationFirebase, database } from "../firebase/firebase.init";
+import { set, ref } from "firebase/database";
+import { uid } from "uid";
 
 initializationFirebase();
 
 const useFirebase = () => {
-  return {};
+  function writeUserData(name, email) {
+    set(ref(database, "users/" + uid), {
+      username: name,
+      email: email,
+    });
+  }
+  return {
+    writeUserData,
+  };
 };
 
 export default useFirebase;
