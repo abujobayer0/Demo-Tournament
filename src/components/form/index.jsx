@@ -51,6 +51,7 @@ const Form = () => {
       if (mailFormat.test(gmail)) {
         writeUserData(formData, () => {
           toast.success("Successfully created user:)");
+          setFormData(defaultFormData);
         });
       } else {
         alert("Chudir vai abar vul korsu thik kore gmail lek bal!");
